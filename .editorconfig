@@ -1,0 +1,14 @@
+# 对所有文件有效
+[*]
+charset=utf-8
+indent_style=space
+indent_size=2
+end_of_line=lf
+trim_trailing_whitespace = true
+insert_final_newline=true
+
+# 对后缀名为md的文件有效
+[*.md]
+max_line_length = off
+trim_trailing_whitespace = false
+
