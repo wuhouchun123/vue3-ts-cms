@@ -1,29 +1,47 @@
 {
   "compilerOptions": {
+    // 目标代码
     "target": "esnext",
+    // 目标代码需要使用的模块化方案
     "module": "esnext",
+    // 严格一些的检查
     "strict": true,
+    // 对jsx进行怎么样的处理
     "jsx": "preserve",
+    // 按照node的方式去解析模块
     "moduleResolution": "node",
+    // 跳过一些库的类型检查
     "skipLibCheck": true,
+    // esmodule和common.js是否可以混合使用，下面两个是一起设置的
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
+
     "forceConsistentCasingInFileNames": true,
+
     "useDefineForClassFields": true,
+
+    // ts转成js，要不要生成映射文件
     "sourceMap": true,
+    // 文件路径在解析时的基本url
     "baseUrl": ".",
+    // 制定具体要解析使用的类型，一般可以不传，不传类型源自target，写了什么类型就使用什么类型
     "types": ["webpack-env"],
+    // 路径解析（类似webpack的alias）
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "components/*": ["src/components/*"]
     },
+    // 可以指定在项目中可以使用哪些库的类型（Proxy/Window/Document）
     "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
   },
+  // 需要解析的文件
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
-    "src/**/*.vue",
+    // "src/**/*.vue",
     "tests/**/*.ts",
     "tests/**/*.tsx"
   ],
+  // 除这个以外
   "exclude": ["node_modules"]
 }
